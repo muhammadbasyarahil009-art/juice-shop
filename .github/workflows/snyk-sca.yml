@@ -3,10 +3,9 @@ name: DevSecOps - Snyk SCA
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main, develop, remediation-sca]
   pull_request:
     branches: [main]
-
 jobs:
   snyk-scan:
     runs-on: ubuntu-latest
