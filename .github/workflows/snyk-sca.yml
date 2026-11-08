@@ -6,6 +6,7 @@ on:
     branches: [main, develop, remediation-sca]
   pull_request:
     branches: [main]
+
 jobs:
   snyk-scan:
     runs-on: ubuntu-latest
@@ -16,10 +17,10 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
 
       - name: Install dependencies
-  	run: npm install --legacy-peer-deps
+        run: npm install --legacy-peer-deps --ignore-scripts
 
       - name: Snyk SCA Scan
         uses: snyk/actions/node@master
